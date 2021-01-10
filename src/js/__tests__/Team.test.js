@@ -82,3 +82,23 @@ test('array conversion test', () => {
     }];
   expect(team.toArray()).toEqual(result);
 });
+
+test('add Throw test', () => {
+  const received = new Team();
+  received.add({
+    attack: 10,
+    defence: 40,
+    health: 100,
+    level: 1,
+    name: 'Мерлин',
+    type: 'Magician',
+  });
+  expect(received.add({
+    attack: 10,
+    defence: 40,
+    health: 100,
+    level: 1,
+    name: 'Мерлин',
+    type: 'Magician',
+  })).toThrow();
+});
