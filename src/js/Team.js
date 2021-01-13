@@ -7,11 +7,10 @@ export default class Team {
   }
 
   add(person) {
-    try {
-      this.members.add(person);
-    } catch (error) {
+    if (JSON.stringify(Array.from(this.members)).includes(JSON.stringify(person))) {
       throw new Error('Персонаж уже в команде');
     }
+    this.members.add(person);
   }
 
   addAll(...rest) {
@@ -22,12 +21,3 @@ export default class Team {
     return Array.from(this.members);
   }
 }
-
-/*
-add(person) {
-  if (this.members.has(person)) {
-    throw new Error('Персонаж уже в команде');
-  }
-  this.members.add(person);
-}
-*/
