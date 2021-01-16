@@ -93,12 +93,12 @@ test('add Throw test', () => {
     name: 'Мерлин',
     type: 'Magician',
   });
-  expect(received.add({
+  expect(() => (received.add({
     attack: 10,
     defence: 40,
     health: 100,
     level: 1,
     name: 'Мерлин',
     type: 'Magician',
-  })).toThrow();
+  }))).toThrow();
 });
